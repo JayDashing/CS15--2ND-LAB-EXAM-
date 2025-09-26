@@ -13,6 +13,23 @@
         "isVerified": false,
         "verificationToken": "63e4502aad83c3028e6cfab02d2751f78bf332975ca80b332940854d1e9c78e8",
         "registeredAt": "2025-09-26 08:37:26",
-        "lastLogin": "2025-09-26 08:38:53"
+        "lastLogin": "2025-09-26 08:44:27"
+    },
+    {
+        "id": "17588695377647",
+        "fullName": "Robert Jhon Aracena",
+        "email": "robert18@gmail.com",
+        "username": "567890",
+        "password": "$2y$10$Aq2JZ6wvl.342J.rGv99EOY70Ao60OJXYMnN4EoGpFp3AlEglPDVa",
+        "gender": "male",
+        "hobbies": [
+            "programming",
+            "ai"
+        ],
+        "country": "ES",
+        "isVerified": false,
+        "verificationToken": "9d5771cccfbfcbff8ee57ce45493bea87c50a3cc20223c0e4fbf8b9db556f8d8",
+        "registeredAt": "2025-09-26 08:52:18",
+        "lastLogin": null
     }
 ]
