@@ -1,57 +1,23 @@
 [
     {
-        "id": "17588686462625",
-        "fullName": "Robert Jhon Aracena",
-        "email": "robert@gmail.com",
-        "username": "robert123",
-        "password": "$2y$10$1v3Hhf8gndD2wfX0sHHBv.HUhrlMXQspCk0.Ah9FlnxSdBJX6tES2",
-        "gender": "male",
-        "hobbies": [
-            "reading"
-        ],
-        "country": "KR",
-        "isVerified": false,
-        "verificationToken": "63e4502aad83c3028e6cfab02d2751f78bf332975ca80b332940854d1e9c78e8",
-        "registeredAt": "2025-09-26 08:37:26",
-        "lastLogin": "2025-09-26 08:44:27"
-    },
-    {
-        "id": "17588695377647",
-        "fullName": "Robert Jhon Aracena",
-        "email": "robert18@gmail.com",
-        "username": "567890",
-        "password": "$2y$10$Aq2JZ6wvl.342J.rGv99EOY70Ao60OJXYMnN4EoGpFp3AlEglPDVa",
-        "gender": "male",
-        "hobbies": [
-            "programming",
-            "ai"
-        ],
-        "country": "ES",
-        "isVerified": false,
-        "verificationToken": "9d5771cccfbfcbff8ee57ce45493bea87c50a3cc20223c0e4fbf8b9db556f8d8",
-        "registeredAt": "2025-09-26 08:52:18",
-<<<<<<< HEAD
-        "lastLogin": "2025-09-26 08:57:12"
-=======
-        "lastLogin": null
-    },
-    {
-        "id": "17588703956965",
+        "id": "17589023018034",
         "fullName": "John Alfred",
         "email": "j.eborda.536024@umindanao.edu.ph",
         "username": "536024",
-        "password": "$2y$10$sKshRqdWvXV8c\/cA1wSB4uwxSNHZOkWmFzcKpuEE0\/o6Bq17e459.",
+        "password": "$2y$10$Dig4U5l2cyDl1EU7qwmrq.6UlZja.4jhhdDNvvlFXWsm9Q\/FOPpFe",
         "gender": "male",
         "hobbies": [
             "programming",
             "ai",
-            "cybersecurity"
+            "cybersecurity",
+            "data-science",
+            "web-dev",
+            "mobile-dev"
         ],
         "country": "PH",
         "isVerified": false,
-        "verificationToken": "a77232a54bb62849764f5b0f0d2ff0f4ad020e984b0365e215b3447d492574ca",
-        "registeredAt": "2025-09-26 09:06:35",
+        "verificationToken": "15728d8d6480827f5cec1a9cf1ab7b53edb86f48b79d7717f5f0ed1eafcc6d84",
+        "registeredAt": "2025-09-26 17:58:21",
         "lastLogin": null
->>>>>>> 712259e78a81d4bbebbf6bf42dfc14d682b8f347
     }
 ]
