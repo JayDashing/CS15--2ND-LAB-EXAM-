@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1>Test JS Functions</h1>
+    <button onclick="testShowModal()">Test showModal function</button>
+    
+    <script>
+        function testShowModal() {
+            console.log('Testing showModal function...');
+            alert('showModal function is accessible!');
+        }
+        
+        // Test if landing.js loads properly
+        console.log('Test page loaded');
+    </script>
+    <script src="landing.js"></script>
+    <script>
+        // Test if showModal function is available
+        setTimeout(() => {
+            if (typeof showModal === 'function') {
+                console.log('✅ showModal function is available');
+            } else {
+                console.log('❌ showModal function is NOT available');
+            }
+        }, 100);
+    </script>
+</body>
+</html>

@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus - Modern Solutions</title>
+    <title>CCE Student Portal - College of Computing Education</title>
     <link rel="stylesheet" href="landing.css">
+    <!-- Prevent favicon 404 error -->
+    <link rel="icon" href="data:,">
 </head>
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Nexus</div>
+            <div class="logo">CCE Portal</div>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#features" class="nav-link">Features</a>
@@ -22,6 +24,7 @@
                 </div>
                 <div id="userMenu" style="display: none;">
                     <span id="welcomeUser" class="welcome-text"></span>
+                    <button class="btn-dashboard" onclick="goToDashboard()">Dashboard</button>
                     <button class="btn-logout" onclick="logout()">Logout</button>
                 </div>
             </div>
@@ -33,16 +36,16 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    Transform Your 
-                    <span class="gradient-text">Digital Future</span>
+                    Welcome to 
+                    <span class="gradient-text">CCE Student Portal</span>
                 </h1>
                 <p class="hero-description">
-                    Experience the next generation of modern solutions with cutting-edge technology 
-                    and innovative design that drives results.
+                    Access your courses, assignments, grades, and academic resources all in one place. 
+                    Join the College of Computing Education digital learning platform today.
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn-primary" onclick="showModal('register')">Get Started</button>
-                    <button class="btn-secondary">Learn More</button>
+                    <button class="btn-primary" onclick="showModal('register')">Create Account</button>
+                    <button class="btn-secondary">About CCE</button>
                 </div>
             </div>
             <div class="hero-visual">
@@ -59,22 +62,22 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">Powerful Features</h2>
+            <h2 class="section-title">Key Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Optimized performance that delivers results in milliseconds</p>
+                    <div class="feature-icon">📚</div>
+                    <h3>Course Management</h3>
+                    <p>Access all your computing courses, materials, and assignments in one place</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure & Safe</h3>
-                    <p>Enterprise-grade security with end-to-end encryption</p>
+                    <div class="feature-icon">�</div>
+                    <h3>Academic Community</h3>
+                    <p>Connect with faculty, classmates, and participate in academic discussions</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile Ready</h3>
-                    <p>Responsive design that works perfectly on any device</p>
+                    <div class="feature-icon">�</div>
+                    <h3>Digital Resources</h3>
+                    <p>Access programming tools, documentation, and educational resources online</p>
                 </div>
             </div>
         </div>
@@ -85,20 +88,20 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Nexus</h2>
-                    <p>We're pioneering the future of digital solutions with innovative technology and user-centric design. Our platform combines cutting-edge features with intuitive interfaces to deliver exceptional experiences.</p>
+                    <h2>About CCE Portal</h2>
+                    <p>The College of Computing Education portal is designed to enhance the academic experience of our students and faculty. Our platform provides a centralized hub for course management, academic resources, and community engagement in the field of computing education.</p>
                     <div class="stats">
                         <div class="stat">
-                            <span class="stat-number">10K+</span>
-                            <span class="stat-label">Active Users</span>
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Students</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">99.9%</span>
-                            <span class="stat-label">Uptime</span>
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Faculty</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Support</span>
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Programs</span>
                         </div>
                     </div>
                 </div>
@@ -192,11 +195,11 @@
             <h2>Welcome Back</h2>
             <form class="auth-form" id="loginForm">
                 <div class="form-group">
-                    <input type="text" id="loginUsername" placeholder="Username" required>
+                    <input type="text" id="loginUsername" placeholder="Username" autocomplete="username" required>
                     <span class="error-message" id="loginUsernameError"></span>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password" required>
                     <span class="error-message" id="loginPasswordError"></span>
                 </div>
                 <div class="form-options">
@@ -231,15 +234,15 @@
                     <span class="error-message" id="registerEmailError"></span>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="registerUsername" placeholder="Username" required>
+                    <input type="text" id="registerUsername" placeholder="Username" autocomplete="username" required>
                     <span class="error-message" id="registerUsernameError"></span>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <input type="password" id="registerPassword" placeholder="Password" autocomplete="new-password" required>
                     <span class="error-message" id="registerPasswordError"></span>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="registerConfirmPassword" placeholder="Confirm Password" required>
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm Password" autocomplete="new-password" required>
                     <span class="error-message" id="registerConfirmPasswordError"></span>
                 </div>
                 
@@ -350,8 +353,7 @@
             </form>
         </div>
     </div>
-<script>
-    
-</script>
+
+    <script src="landing.js"></script>
 </body>
 </html>

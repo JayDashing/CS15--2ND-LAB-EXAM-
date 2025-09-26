@@ -1,0 +1,18 @@
+[
+    {
+        "id": "17588686462625",
+        "fullName": "Robert Jhon Aracena",
+        "email": "robert@gmail.com",
+        "username": "robert123",
+        "password": "$2y$10$1v3Hhf8gndD2wfX0sHHBv.HUhrlMXQspCk0.Ah9FlnxSdBJX6tES2",
+        "gender": "male",
+        "hobbies": [
+            "reading"
+        ],
+        "country": "KR",
+        "isVerified": false,
+        "verificationToken": "63e4502aad83c3028e6cfab02d2751f78bf332975ca80b332940854d1e9c78e8",
+        "registeredAt": "2025-09-26 08:37:26",
+        "lastLogin": "2025-09-26 08:38:53"
+    }
+]

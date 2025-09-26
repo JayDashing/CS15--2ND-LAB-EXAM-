@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backend Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        .success { color: green; }
+        .error { color: red; }
+        button { padding: 10px; margin: 5px; }
+        pre { background: #f5f5f5; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Backend API Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Registration</h2>
+        <button onclick="testRegistration()">Test Register User</button>
+        <div id="registerResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Login</h2>
+        <button onclick="testLogin()">Test Login</button>
+        <div id="loginResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>View Users File</h2>
+        <button onclick="viewUsers()">View users.json</button>
+        <div id="usersResult"></div>
+    </div>
+
+    <script>
+        async function makeAPIRequest(data) {
+            try {
+                const response = await fetch('logreg.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                return await response.json();
+            } catch (error) {
+                console.error('API Error:', error);
+                return { success: false, message: error.message };
+            }
+        }
+
+        async function testRegistration() {
+            const resultDiv = document.getElementById('registerResult');
+            resultDiv.innerHTML = 'Testing registration...';
+            
+            const testData = {
+                action: 'register',
+                fullName: 'Test User',
+                email: 'test@example.com',
+                username: 'testuser',
+                password: 'password123',
+                confirmPassword: 'password123',
+                gender: 'male',
+                hobbies: ['reading', 'sports'],
+                country: 'US',
+                termsAccepted: true
+            };
+            
+            const result = await makeAPIRequest(testData);
+            
+            if (result.success) {
+                resultDiv.innerHTML = `<div class="success">✅ Registration successful!</div><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            } else {
+                resultDiv.innerHTML = `<div class="error">❌ Registration failed: ${result.message}</div><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            }
+        }
+
+        async function testLogin() {
+            const resultDiv = document.getElementById('loginResult');
+            resultDiv.innerHTML = 'Testing login...';
+            
+            const testData = {
+                action: 'login',
+                username: 'testuser',
+                password: 'password123'
+            };
+            
+            const result = await makeAPIRequest(testData);
+            
+            if (result.success) {
+                resultDiv.innerHTML = `<div class="success">✅ Login successful!</div><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            } else {
+                resultDiv.innerHTML = `<div class="error">❌ Login failed: ${result.message}</div><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            }
+        }
+
+        async function viewUsers() {
+            const resultDiv = document.getElementById('usersResult');
+            resultDiv.innerHTML = 'Loading users...';
+            
+            try {
+                const response = await fetch('users.json');
+                if (response.ok) {
+                    const users = await response.json();
+                    resultDiv.innerHTML = `<pre>${JSON.stringify(users, null, 2)}</pre>`;
+                } else {
+                    resultDiv.innerHTML = '<div class="error">Could not load users.json</div>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

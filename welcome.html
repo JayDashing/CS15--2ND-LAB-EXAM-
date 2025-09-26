@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - CCE Student Portal</title>
+    <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="welcome-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CCE Portal</span>
+            </div>
+            <div class="nav-menu">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name" id="userName">Loading...</span>
+                        <span class="user-role">Student</span>
+                    </div>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn-profile" onclick="showProfile()">
+                        <i class="fas fa-cog"></i>
+                        Profile
+                    </button>
+                    <button class="btn-logout" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Hero Section -->
+    <section class="welcome-hero">
+        <div class="hero-content">
+            <div class="welcome-animation">
+                <div class="particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+            <div class="welcome-text">
+                <h1 class="welcome-title">
+                    Welcome Back, <span id="welcomeUserName">Student</span>! �
+                </h1>
+                <p class="welcome-subtitle">
+                    Welcome to the College of Computing Education Student Portal. Access your courses, assignments, and academic resources all in one place.
+                </p>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="memberSince">--</span>
+                            <span class="stat-label">Enrolled Since</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">Active</span>
+                            <span class="stat-label">Student Status</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Cards -->
+    <section class="dashboard-section">
+        <div class="container">
+            <h2 class="section-title">Student Dashboard</h2>
+            <div class="dashboard-grid">
+                <!-- Academic Quick Actions Card -->
+                <div class="dashboard-card action-card">
+                    <div class="card-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Academic Hub</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="action-buttons">
+                            <button class="action-btn" onclick="viewCourses()">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                My Courses
+                            </button>
+                            <button class="action-btn" onclick="viewAssignments()">
+                                <i class="fas fa-tasks"></i>
+                                Assignments
+                            </button>
+                            <button class="action-btn" onclick="viewGrades()">
+                                <i class="fas fa-chart-line"></i>
+                                Grades
+                            </button>
+                            <button class="action-btn" onclick="viewSchedule()">
+                                <i class="fas fa-calendar-week"></i>
+                                Schedule
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Academic Activity Card -->
+                <div class="dashboard-card activity-card">
+                    <div class="card-header">
+                        <i class="fas fa-history"></i>
+                        <h3>Recent Academic Activity</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-file-upload"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <span class="activity-text">Submitted CS15 Lab Assignment</span>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <span class="activity-text">Accessed Data Structures notes</span>
+                                    <span class="activity-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <span class="activity-text">Attended Web Development lecture</span>
+                                    <span class="activity-time">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="view-all-btn">View All Activity</button>
+                    </div>
+                </div>
+
+                <!-- Student Profile Card -->
+                <div class="dashboard-card profile-card">
+                    <div class="card-header">
+                        <i class="fas fa-id-card"></i>
+                        <h3>Student Profile</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="profile-info">
+                            <div class="profile-avatar-large">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="profile-details">
+                                <h4 id="profileName">Loading...</h4>
+                                <p id="profileEmail">Loading...</p>
+                                <div class="profile-stats">
+                                    <div class="profile-stat">
+                                        <span class="stat-label">Program:</span>
+                                        <span class="stat-value">Computer Science</span>
+                                    </div>
+                                    <div class="profile-stat">
+                                        <span class="stat-label">Year Level:</span>
+                                        <span class="stat-value">2nd Year</span>
+                                    </div>
+                                    <div class="profile-stat">
+                                        <span class="stat-label">Student ID:</span>
+                                        <span class="stat-value" id="studentId">CS-2023-001</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="edit-profile-btn" onclick="editProfile()">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Academic Announcements Card -->
+                <div class="dashboard-card notification-card">
+                    <div class="card-header">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Announcements</h3>
+                        <span class="notification-count">4</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="notification-list">
+                            <div class="notification-item unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="notification-details">
+                                    <span class="notification-text">CS15 Final Exam scheduled for next week</span>
+                                    <span class="notification-time">Just now</span>
+                                </div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="notification-details">
+                                    <span class="notification-text">Web Development Lab - Room 301</span>
+                                    <span class="notification-time">1 hour ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="notification-details">
+                                    <span class="notification-text">New course materials uploaded</span>
+                                    <span class="notification-time">3 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="notification-details">
+                                    <span class="notification-text">Welcome to CCE Academic Year 2024-2025!</span>
+                                    <span class="notification-time">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="view-all-btn">View All Announcements</button>
+                    </div>
+                </div>
+
+                <!-- Academic Resources Card -->
+                <div class="dashboard-card resources-card">
+                    <div class="card-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Academic Resources</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="resource-list">
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="resource-details">
+                                    <span class="resource-title">Programming Lab</span>
+                                    <span class="resource-description">Online coding environment</span>
+                                </div>
+                                <button class="resource-btn" onclick="openResource('lab')">Access</button>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <div class="resource-details">
+                                    <span class="resource-title">Digital Library</span>
+                                    <span class="resource-description">CS textbooks and journals</span>
+                                </div>
+                                <button class="resource-btn" onclick="openResource('library')">Browse</button>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="resource-details">
+                                    <span class="resource-title">Study Groups</span>
+                                    <span class="resource-description">Collaborate with classmates</span>
+                                </div>
+                                <button class="resource-btn" onclick="openResource('groups')">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="welcome-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 College of Computing Education. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="#" class="footer-link">Academic Calendar</a>
+                    <a href="#" class="footer-link">Student Handbook</a>
+                    <a href="#" class="footer-link">IT Support</a>
+                    <a href="#" class="footer-link">Contact Faculty</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Message Display -->
+    <div id="messageDisplay" class="message-display">
+        <div class="message-content">
+            <i class="message-icon"></i>
+            <span id="messageText"></span>
+            <button class="message-close" onclick="hideMessage()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="welcome.js"></script>
+</body>
+</html>
