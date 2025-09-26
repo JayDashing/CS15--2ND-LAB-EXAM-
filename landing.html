@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus - Modern Solutions</title>
+    <title>College of Computing Education</title>
     <link rel="stylesheet" href="landing.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Nexus</div>
+            <div class="logo-container">
+                <img src="CCE logo.png" alt="CCE Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">CCE</div>
+                <div class="logo-text">College of Computing Education</div>
+            </div>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
-                <a href="#features" class="nav-link">Features</a>
+                <a href="#features" class="nav-link">Programs</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <div id="authButtons">
@@ -33,16 +37,16 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    Transform Your 
-                    <span class="gradient-text">Digital Future</span>
+                    Shape Your 
+                    <span class="gradient-text">Computing Future</span>
                 </h1>
                 <p class="hero-description">
-                    Experience the next generation of modern solutions with cutting-edge technology 
-                    and innovative design that drives results.
+                    Join the College of Computing Education and discover cutting-edge programs 
+                    that prepare you for tomorrow's technology challenges.
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn-primary" onclick="showModal('register')">Get Started</button>
-                    <button class="btn-secondary">Learn More</button>
+                    <button class="btn-primary" onclick="showModal('register')">Enroll Now</button>
+                    <button class="btn-secondary">Explore Programs</button>
                 </div>
             </div>
             <div class="hero-visual">
@@ -59,22 +63,22 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">Powerful Features</h2>
+            <h2 class="section-title">Our Programs</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Optimized performance that delivers results in milliseconds</p>
+                    <div class="feature-icon">💻</div>
+                    <h3>Computer Science</h3>
+                    <p>Comprehensive curriculum covering algorithms, programming, and software development</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
-                    <h3>Secure & Safe</h3>
-                    <p>Enterprise-grade security with end-to-end encryption</p>
+                    <h3>Cybersecurity</h3>
+                    <p>Advanced security protocols and threat analysis for digital protection</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile Ready</h3>
-                    <p>Responsive design that works perfectly on any device</p>
+                    <div class="feature-icon">📊</div>
+                    <h3>Data Science</h3>
+                    <p>Analytics, machine learning, and big data processing techniques</p>
                 </div>
             </div>
         </div>
@@ -85,20 +89,20 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Nexus</h2>
-                    <p>We're pioneering the future of digital solutions with innovative technology and user-centric design. Our platform combines cutting-edge features with intuitive interfaces to deliver exceptional experiences.</p>
+                    <h2>About CCE</h2>
+                    <p>The College of Computing Education is dedicated to fostering excellence in technology education. We combine innovative teaching methods with industry-relevant curriculum to prepare the next generation of computing professionals.</p>
                     <div class="stats">
                         <div class="stat">
-                            <span class="stat-number">10K+</span>
-                            <span class="stat-label">Active Users</span>
+                            <span class="stat-number">5K+</span>
+                            <span class="stat-label">Students</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">99.9%</span>
-                            <span class="stat-label">Uptime</span>
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Job Placement</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Support</span>
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Faculty</span>
                         </div>
                     </div>
                 </div>
@@ -115,20 +119,20 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Ready to get started?</h3>
-                    <p>Join thousands of satisfied users and transform your digital experience today.</p>
+                    <h3>Ready to start your journey?</h3>
+                    <p>Join our community of learners and educators who are shaping the future of computing.</p>
                     <div class="contact-methods">
                         <div class="contact-method">
                             <span class="contact-icon">📧</span>
-                            <span>hello@nexus.com</span>
+                            <span>admissions@cce.edu</span>
                         </div>
                         <div class="contact-method">
                             <span class="contact-icon">📞</span>
-                            <span>+1 (555) 123-4567</span>
+                            <span>+1 (555) CCE-TECH</span>
                         </div>
                         <div class="contact-method">
                             <span class="contact-icon">📍</span>
-                            <span>San Francisco, CA</span>
+                            <span>Computing Campus, Tech Valley</span>
                         </div>
                     </div>
                 </div>
@@ -147,32 +151,36 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo">Nexus</div>
-                    <p>Transforming the digital landscape with innovative solutions.</p>
+                    <div class="footer-logo-container">
+                        <img src="CCE logo.png" alt="CCE Logo" class="footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="footer-logo-placeholder" style="display: none;">CCE</div>
+                        <div class="footer-logo-text">College of Computing Education</div>
+                    </div>
+                    <p>Empowering minds through innovative computing education.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-section">
-                        <h4>Product</h4>
-                        <a href="#">Features</a>
-                        <a href="#">Pricing</a>
-                        <a href="#">Documentation</a>
+                        <h4>Academics</h4>
+                        <a href="#">Programs</a>
+                        <a href="#">Courses</a>
+                        <a href="#">Faculty</a>
                     </div>
                     <div class="footer-section">
-                        <h4>Company</h4>
-                        <a href="#">About</a>
-                        <a href="#">Careers</a>
-                        <a href="#">Contact</a>
+                        <h4>Admissions</h4>
+                        <a href="#">Apply</a>
+                        <a href="#">Requirements</a>
+                        <a href="#">Financial Aid</a>
                     </div>
                     <div class="footer-section">
-                        <h4>Support</h4>
-                        <a href="#">Help Center</a>
-                        <a href="#">Community</a>
-                        <a href="#">Status</a>
+                        <h4>Student Life</h4>
+                        <a href="#">Campus</a>
+                        <a href="#">Organizations</a>
+                        <a href="#">Events</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Nexus. All rights reserved.</p>
+                <p>&copy; 2025 College of Computing Education. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -189,10 +197,10 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="hideModal('login')">&times;</span>
-            <h2>Welcome Back</h2>
+            <h2>Student Login</h2>
             <form class="auth-form" id="loginForm">
                 <div class="form-group">
-                    <input type="text" id="loginUsername" placeholder="Username" required>
+                    <input type="text" id="loginUsername" placeholder="Student ID" required>
                     <span class="error-message" id="loginUsernameError"></span>
                 </div>
                 <div class="form-group">
@@ -210,7 +218,7 @@
                 <button type="submit" class="btn-primary">Sign In</button>
                 <div class="general-error" id="loginGeneralError"></div>
                 <div class="auth-switch">
-                    <p>Don't have an account? <a href="#" onclick="switchModal('login', 'register')">Sign up</a></p>
+                    <p>New student? <a href="#" onclick="switchModal('login', 'register')">Create account</a></p>
                 </div>
             </form>
         </div>
@@ -220,7 +228,7 @@
     <div id="registerModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="hideModal('register')">&times;</span>
-            <h2>Create Account</h2>
+            <h2>Student Registration</h2>
             <form class="auth-form" id="registerForm">
                 <div class="form-group">
                     <input type="text" id="registerFullName" placeholder="Full Name" required>
@@ -231,7 +239,7 @@
                     <span class="error-message" id="registerEmailError"></span>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="registerUsername" placeholder="Username" required>
+                    <input type="text" id="registerUsername" placeholder="Student ID" required>
                     <span class="error-message" id="registerUsernameError"></span>
                 </div>
                 <div class="form-group">
@@ -266,42 +274,42 @@
                     <span class="error-message" id="registerGenderError"></span>
                 </div>
 
-                <!-- Hobbies Selection -->
+                <!-- Interests Selection -->
                 <div class="form-group">
-                    <label class="form-label">Hobbies:</label>
+                    <label class="form-label">Areas of Interest:</label>
                     <div class="checkbox-group">
                         <label class="checkbox-container">
-                            <input type="checkbox" name="hobbies" value="reading">
+                            <input type="checkbox" name="interests" value="programming">
                             <span class="checkmark"></span>
-                            Reading
+                            Programming
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" name="hobbies" value="sports">
+                            <input type="checkbox" name="interests" value="ai">
                             <span class="checkmark"></span>
-                            Sports
+                            AI/ML
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" name="hobbies" value="music">
+                            <input type="checkbox" name="interests" value="cybersecurity">
                             <span class="checkmark"></span>
-                            Music
+                            Cybersecurity
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" name="hobbies" value="travel">
+                            <input type="checkbox" name="interests" value="data-science">
                             <span class="checkmark"></span>
-                            Travel
+                            Data Science
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" name="hobbies" value="cooking">
+                            <input type="checkbox" name="interests" value="web-dev">
                             <span class="checkmark"></span>
-                            Cooking
+                            Web Development
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" name="hobbies" value="gaming">
+                            <input type="checkbox" name="interests" value="mobile-dev">
                             <span class="checkmark"></span>
-                            Gaming
+                            Mobile Development
                         </label>
                     </div>
-                    <span class="error-message" id="registerHobbiesError"></span>
+                    <span class="error-message" id="registerInterestsError"></span>
                 </div>
 
                 <!-- Country Selection -->
@@ -337,7 +345,7 @@
                     <label class="checkbox-container terms-checkbox">
                         <input type="checkbox" id="registerTerms" required>
                         <span class="checkmark"></span>
-                        I agree to the Terms of Service
+                        I agree to the Terms of Service and Privacy Policy
                     </label>
                     <span class="error-message" id="registerTermsError"></span>
                 </div>
@@ -345,7 +353,7 @@
                 <button type="submit" class="btn-primary">Create Account</button>
                 <div class="general-error" id="registerGeneralError"></div>
                 <div class="auth-switch">
-                    <p>Already have an account? <a href="#" onclick="switchModal('register', 'login')">Sign in</a></p>
+                    <p>Already registered? <a href="#" onclick="switchModal('register', 'login')">Sign in</a></p>
                 </div>
             </form>
         </div>
