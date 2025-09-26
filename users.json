@@ -30,6 +30,28 @@
         "isVerified": false,
         "verificationToken": "9d5771cccfbfcbff8ee57ce45493bea87c50a3cc20223c0e4fbf8b9db556f8d8",
         "registeredAt": "2025-09-26 08:52:18",
+<<<<<<< HEAD
         "lastLogin": "2025-09-26 08:57:12"
+=======
+        "lastLogin": null
+    },
+    {
+        "id": "17588703956965",
+        "fullName": "John Alfred",
+        "email": "j.eborda.536024@umindanao.edu.ph",
+        "username": "536024",
+        "password": "$2y$10$sKshRqdWvXV8c\/cA1wSB4uwxSNHZOkWmFzcKpuEE0\/o6Bq17e459.",
+        "gender": "male",
+        "hobbies": [
+            "programming",
+            "ai",
+            "cybersecurity"
+        ],
+        "country": "PH",
+        "isVerified": false,
+        "verificationToken": "a77232a54bb62849764f5b0f0d2ff0f4ad020e984b0365e215b3447d492574ca",
+        "registeredAt": "2025-09-26 09:06:35",
+        "lastLogin": null
+>>>>>>> 712259e78a81d4bbebbf6bf42dfc14d682b8f347
     }
 ]
