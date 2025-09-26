@@ -84,8 +84,21 @@ nav {
     width: 100%;
 }
 
+/* User Menu */
+#userMenu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.welcome-text {
+    color: #1e3a8a;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
 /* Buttons */
-.btn-login, .btn-register, .btn-primary, .btn-secondary {
+.btn-login, .btn-register, .btn-primary, .btn-secondary, .btn-logout {
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     font-weight: 600;
@@ -118,6 +131,19 @@ nav {
 .btn-register:hover, .btn-primary:hover {
     background: linear-gradient(135deg, #1d4ed8, #1e40af);
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    background: #ef4444;
+    color: white;
+    border: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn-logout:hover {
+    background: #dc2626;
     transform: translateY(-2px);
 }
 
@@ -503,6 +529,72 @@ nav {
     color: #bfdbfe;
 }
 
+/* Message Display */
+.message-display {
+    display: none;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 2001;
+    max-width: 400px;
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: slideInRight 0.3s ease;
+}
+
+.message-display.show {
+    display: block;
+}
+
+.message-display.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.message-display.error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.message-display.info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+.message-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.message-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.message-close:hover {
+    opacity: 1;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /* Modals */
 .modal {
     display: none;
@@ -524,10 +616,12 @@ nav {
     padding: 2.5rem;
     border-radius: 20px;
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
     position: relative;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     animation: slideIn 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 @keyframes fadeIn {
@@ -562,44 +656,108 @@ nav {
     font-weight: 600;
 }
 
+/* Forms */
 .auth-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.auth-form input {
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.has-error input,
+.form-group.has-error select {
+    border-color: #ef4444;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #1e3a8a;
+    font-size: 0.95rem;
+}
+
+.auth-form input,
+.auth-form select {
     padding: 1rem;
     border: 2px solid #e5e7eb;
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
+    font-family: inherit;
 }
 
-.auth-form input:focus {
+.auth-form input:focus,
+.auth-form select:focus {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
+.auth-form select {
+    cursor: pointer;
 }
 
+/* Radio and Checkbox Groups */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.radio-container,
 .checkbox-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     color: #64748b;
+    font-size: 0.95rem;
+    position: relative;
 }
 
+.radio-container input[type="radio"],
 .checkbox-container input[type="checkbox"] {
     width: auto;
     margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.terms-checkbox {
+    margin-top: 0.5rem;
+}
+
+/* Error Messages */
+.error-message,
+.general-error {
+    color: #ef4444;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: none;
+    margin-top: 0.25rem;
+}
+
+.general-error {
+    text-align: center;
+    padding: 0.75rem;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
 }
 
 .forgot-password {
@@ -616,6 +774,7 @@ nav {
     text-align: center;
     color: #64748b;
     font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
 
 .auth-switch a {
@@ -631,6 +790,17 @@ nav {
 @media (max-width: 768px) {
     .nav-menu {
         gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    #userMenu {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-end;
+    }
+    
+    .welcome-text {
+        font-size: 0.8rem;
     }
     
     .hero-content {
@@ -691,6 +861,7 @@ nav {
     .modal-content {
         padding: 2rem;
         margin: 1rem;
+        max-width: 95%;
     }
     
     .hero-visual {
@@ -716,6 +887,18 @@ nav {
         width: 200px;
         height: 200px;
     }
+    
+    .message-display {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .radio-group,
+    .checkbox-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 @media (max-width: 480px) {
@@ -730,6 +913,7 @@ nav {
     .nav-menu {
         flex-wrap: wrap;
         gap: 0.5rem;
+        justify-content: center;
     }
     
     .btn-login,
@@ -746,5 +930,17 @@ nav {
     .btn-primary,
     .btn-secondary {
         width: 200px;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+    }
+    
+    .auth-form {
+        gap: 1rem;
+    }
+    
+    .form-group {
+        gap: 0.25rem;
     }
 }
