@@ -114,10 +114,14 @@ async function makeAPIRequest(data) {
         });
         
         if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Server error response:', errorText);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
-        return await response.json();
+        const jsonResponse = await response.json();
+        console.log('Server response:', jsonResponse);
+        return jsonResponse;
     } catch (error) {
         console.error('API Error:', error);
         throw new Error('Server connection failed. Please try again.');
@@ -135,7 +139,7 @@ async function handleRegistration(e) {
     const password = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('registerConfirmPassword').value;
     const gender = document.querySelector('input[name="gender"]:checked')?.value;
-    const hobbies = Array.from(document.querySelectorAll('input[name="hobbies"]:checked')).map(cb => cb.value);
+    const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
     const country = document.getElementById('registerCountry').value;
     const termsAccepted = document.getElementById('registerTerms').checked;
     
@@ -187,8 +191,8 @@ async function handleRegistration(e) {
         hasErrors = true;
     }
 
-    if (hobbies.length === 0) {
-        showError('registerHobbiesError', 'Please select at least one hobby');
+    if (interests.length === 0) {
+        showError('registerInterestsError', 'Please select at least one area of interest');
         hasErrors = true;
     }
 
@@ -209,6 +213,19 @@ async function handleRegistration(e) {
     // Show loading message
     showMessage('Creating your account...', 'info');
     
+    // Debug logging
+    console.log('Registration data:', {
+        fullName,
+        email,
+        username,
+        password: '***',
+        confirmPassword: '***',
+        gender,
+        interests,
+        country,
+        termsAccepted
+    });
+    
     try {
         // Make API request
         const response = await makeAPIRequest({
@@ -219,10 +236,12 @@ async function handleRegistration(e) {
             password,
             confirmPassword,
             gender,
-            hobbies,
+            hobbies: interests,
             country,
             termsAccepted
         });
+
+        console.log('Registration response:', response);
 
         if (response.success) {
             // Store user data locally for session management
