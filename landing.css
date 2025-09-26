@@ -5,6 +5,39 @@
     box-sizing: border-box;
 }
 
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+.eye-icon {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
@@ -342,49 +375,74 @@ nav {
     color: #4a4a2a;
 }
 
-/* Features Section */
+/* Features Section - Updated with horizontal scrolling animation */
 .features {
     padding: 5rem 0;
     background: white;
+    overflow: hidden;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.programs-slider {
+    width: 100%;
+    overflow: hidden;
     margin-top: 3rem;
+    position: relative;
+}
+
+.programs-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+}
+
+/* Pause animation on hover */
+.programs-slider:hover .programs-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% / 2));
+    }
 }
 
 .feature-card {
     background: linear-gradient(135deg, #fffff0, #ffff99);
-    padding: 2.5rem;
-    border-radius: 20px;
+    padding: 1.5rem;
+    border-radius: 15px;
     text-align: center;
     border: 1px solid rgba(255, 255, 153, 0.3);
-    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 255, 153, 0.15);
+    width: 250px;
+    flex-shrink: 0;
+    transition: box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(255, 255, 153, 0.25);
+    box-shadow: 0 4px 20px rgba(255, 255, 153, 0.25);
 }
 
 .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .feature-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: #4a4a2a;
+    line-height: 1.3;
 }
 
 .feature-card p {
     color: #6b6b4a;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 /* About Section */
@@ -436,6 +494,7 @@ nav {
     font-size: 0.9rem;
     color: #6b6b4a;
     font-weight: 500;
+    font-weight: bold;
 }
 
 .about-visual {
@@ -927,10 +986,6 @@ nav {
         justify-content: center;
     }
     
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .nav-container {
         padding: 0 1rem;
     }
@@ -968,6 +1023,25 @@ nav {
     .checkbox-group {
         flex-direction: column;
         align-items: flex-start;
+    }
+    
+    /* Mobile adjustments for scrolling programs */
+    .feature-card {
+        min-width: 280px;
+        padding: 2rem;
+    }
+    
+    .programs-track {
+        width: calc(280px * 10 + 18rem);
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-280px * 5 - 10rem));
+        }
     }
 }
 
@@ -1017,5 +1091,32 @@ nav {
     .logo-text,
     .footer-logo-text {
         font-size: 1.1rem;
+    }
+    
+    /* Smaller mobile adjustments for scrolling programs */
+    .feature-card {
+        min-width: 250px;
+        padding: 1.5rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .feature-card p {
+        font-size: 1rem;
+    }
+    
+    .programs-track {
+        width: calc(250px * 10 + 18rem);
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-250px * 5 - 10rem));
+        }
     }
 }

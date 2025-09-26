@@ -1,6 +1,22 @@
 // User storage now handled by PHP backend
 let currentUser = JSON.parse(localStorage.getItem('nexusCurrentUser')) || null;
 
+// Function to toggle password visibility
+function togglePassword(inputId, button) {
+    const input = document.getElementById(inputId);
+    const eyeIcon = button.querySelector('.eye-icon');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        eyeIcon.style.opacity = '1';
+        eyeIcon.textContent = '👀'; // Open eye
+    } else {
+        input.type = 'password';
+        eyeIcon.style.opacity = '0.7';
+        eyeIcon.textContent = '👁️'; // Closed eye
+    }
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     if (currentUser) {
