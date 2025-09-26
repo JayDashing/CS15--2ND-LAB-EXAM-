@@ -139,7 +139,7 @@ nav {
 .btn-login {
     background: transparent;
     color: #4a4a2a;
-    border: 2px solid #bf8200;
+    border: 2px solid #fff157;
 }   
 
 .btn-login:hover {
@@ -233,7 +233,7 @@ nav {
     flex-wrap: wrap;
 }
 
-/* Hero Visual */
+/* Hero Visual - Updated for Image */
 .hero-visual {
     position: relative;
     height: 400px;
@@ -242,45 +242,48 @@ nav {
     justify-content: center;
 }
 
-.floating-card {
-    position: absolute;
-    background: white;
+.hero-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(255, 255, 153, 0.15);
-    border: 1px solid rgba(255, 255, 153, 0.3);
+    box-shadow: 0 20px 40px rgba(255, 255, 153, 0.25);
+    transition: all 0.3s ease;
+    object-fit: cover;
 }
 
-.card-1 {
-    width: 200px;
-    height: 120px;
+.hero-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(255, 255, 153, 0.35);
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    height: 100%;
     background: linear-gradient(135deg, #ffff99, #ffff66);
-    animation: float 6s ease-in-out infinite;
-    z-index: 3;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(255, 255, 153, 0.25);
+    border: 2px dashed rgba(255, 255, 102, 0.5);
 }
 
-.card-2 {
-    width: 160px;
-    height: 100px;
-    background: linear-gradient(135deg, #fffff0, #ffff99);
-    top: 20%;
-    right: 10%;
-    animation: float 6s ease-in-out infinite 2s;
-    z-index: 2;
+.placeholder-content {
+    text-align: center;
+    color: #4a4a2a;
 }
 
-.card-3 {
-    width: 140px;
-    height: 90px;
-    background: linear-gradient(135deg, #ffff66, #ffff33);
-    bottom: 20%;
-    left: 10%;
-    animation: float 6s ease-in-out infinite 4s;
-    z-index: 1;
+.placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(2deg); }
+.placeholder-content p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 /* Scroll Indicator */
@@ -712,9 +715,10 @@ nav {
 .modal-content h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #4a4a2a;
+    color: #969600;
     font-size: 1.8rem;
     font-weight: 600;
+    font-weight: bold;
 }
 
 /* Forms */
@@ -737,14 +741,14 @@ nav {
 
 .form-label {
     font-weight: 600;
-    color: #4a4a2a;
+    color: #757572;
     font-size: 0.95rem;
 }
 
 .auth-form input,
 .auth-form select {
     padding: 1rem;
-    border: 2px solid #ffff99;
+    border: 2px solid #6b6b69;
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -927,21 +931,6 @@ nav {
     
     .hero-visual {
         height: 300px;
-    }
-    
-    .card-1 {
-        width: 150px;
-        height: 100px;
-    }
-    
-    .card-2 {
-        width: 120px;
-        height: 80px;
-    }
-    
-    .card-3 {
-        width: 100px;
-        height: 70px;
     }
     
     .about-shape {
