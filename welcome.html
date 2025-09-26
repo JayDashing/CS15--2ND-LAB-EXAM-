@@ -16,24 +16,50 @@
                 <span>CCE Portal</span>
             </div>
             <div class="nav-menu">
-                <div class="user-info">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="user-details">
-                        <span class="user-name" id="userName">Loading...</span>
-                        <span class="user-role">Student</span>
-                    </div>
-                </div>
-                <div class="nav-actions">
-                    <button class="btn-profile" onclick="showProfile()">
-                        <i class="fas fa-cog"></i>
-                        Profile
+                <div class="profile-dropdown">
+                    <button class="profile-trigger" onclick="toggleProfileDropdown()">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-details">
+                            <span class="user-name" id="userName">Loading...</span>
+                            <span class="user-role">Student</span>
+                        </div>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
                     </button>
-                    <button class="btn-logout" onclick="logout()">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Logout
-                    </button>
+                    
+                    <div class="dropdown-menu" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <div class="user-avatar-large">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info-detailed">
+                                <span class="user-name-large" id="userNameDropdown">Loading...</span>
+                                <span class="user-role-detailed">Student</span>
+                                <span class="user-id" id="userIdDropdown">ID: Loading...</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-actions">
+                            <button class="dropdown-item" onclick="showProfile()">
+                                <i class="fas fa-user-cog"></i>
+                                <span>Profile Settings</span>
+                            </button>
+                            <button class="dropdown-item" onclick="showAccountSettings()">
+                                <i class="fas fa-cog"></i>
+                                <span>Account Settings</span>
+                            </button>
+                            <button class="dropdown-item" onclick="showHelp()">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Help & Support</span>
+                            </button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item logout-item" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

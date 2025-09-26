@@ -20,6 +20,14 @@ function loadUserData() {
     // Update navigation
     document.getElementById('userName').textContent = userData.fullName;
     
+    // Update dropdown if elements exist
+    if (document.getElementById('userNameDropdown')) {
+        document.getElementById('userNameDropdown').textContent = userData.fullName;
+    }
+    if (document.getElementById('userIdDropdown')) {
+        document.getElementById('userIdDropdown').textContent = `ID: ${userData.username}`;
+    }
+    
     // Update welcome section
     document.getElementById('welcomeUserName').textContent = userData.fullName;
     
@@ -315,3 +323,46 @@ function lazyLoadContent() {
 
 // Initialize lazy loading
 lazyLoadContent();
+
+// Profile Dropdown Functionality
+function toggleProfileDropdown() {
+    const dropdown = document.getElementById('profileDropdown');
+    const trigger = document.querySelector('.profile-trigger');
+    
+    dropdown.classList.toggle('show');
+    trigger.classList.toggle('active');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('profileDropdown');
+    const trigger = document.querySelector('.profile-trigger');
+    
+    if (!trigger.contains(event.target)) {
+        dropdown.classList.remove('show');
+        trigger.classList.remove('active');
+    }
+});
+
+// Update dropdown user info
+function updateDropdownUserInfo() {
+    const currentUser = JSON.parse(localStorage.getItem('nexusCurrentUser'));
+    if (currentUser) {
+        document.getElementById('userNameDropdown').textContent = currentUser.fullName;
+        document.getElementById('userIdDropdown').textContent = `ID: ${currentUser.username}`;
+    }
+}
+
+// New dropdown menu functions
+function showAccountSettings() {
+    alert('Account Settings - Feature coming soon!');
+}
+
+function showHelp() {
+    alert('Help & Support - Feature coming soon!');
+}
+
+// Call this when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    updateDropdownUserInfo();
+});
